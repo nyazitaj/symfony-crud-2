@@ -1,0 +1,50 @@
+/* --------------------------------------- Navbar --------------------------------------- */
+
+
+/* -------------------------------------- Film list ------------------------------------- */
+
+.films {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.film-container {
+    display: inline-block;
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    width: 198px;
+    display: block;
+    transition: .2s all;
+    margin: 0 10px 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.film-icons {
+    position: absolute;
+    top: 10px;
+    right: 9px;
+}
+
+.film-icons a {
+    display: block;
+    padding: 4px;
+    border: 1px solid silver;
+    margin: 5px 5px 8px 0;
+}
+
+.film-container:hover {
+    border: 1px solid silver;
+    box-shadow: 0 0 5px 0px silver;
+}
+
+.row-film-image {
+    text-align: center;
+}
+
+.row-film-image img {
+    width: 100%;
+}

@@ -4,11 +4,9 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
+{# <div>
     <label for="film-titre">Titre du film</label>
     <input type="text" id="film-titre" Placeholder="Saisir le titre du film" />
     <h1>Saved new films with title  <u>{{ film_title }}</u></h1>
@@ -24,5 +22,46 @@
     <label for="film-genre">Genre</label>
     <input type="text" id="film-genre" Placeholder="Le genre" />
     <h1>Saved new films with title  <u>{{ film_title }}</u></h1>
-</div>
+</div> #}
+
+
+    {# {{ form(form) }} #}
+
+    {% if (idEditor) %}
+        <div>Formualire de modification de film</div>
+    {% else %}
+        <div>Formualire d'ajout de film</div>
+    {% endif %}
+
+    {{ form_start(form) }}
+
+    <div>
+        {{ form_row(form.title, { 'label': 'Title :' }) }}
+    </div>
+
+    <div>
+        {{ form_row(form.realisateur, { 'label': 'Réalisateur :' }) }}
+    </div>
+
+    <div>
+        {{ form_row(form.genre, { 'label': 'Genre :' }) }}
+    </div>
+
+    <div>
+        {{ form_row(form.image, { 'label': 'Image :' }) }}
+    </div>
+
+    <div>
+        {{ form_row(form.link, { 'label': 'Link :' }) }}
+    </div>
+
+    <div>
+        {% if (idEditor) %}
+            {{ form_row(form.save, { 'label': 'Edit :' }) }}
+        {% else %}
+            {{ form_row(form.save, { 'label': 'Save :' }) }}
+        {% endif %}
+    </div>
+
+    {{ form_end(form) }}
 {% endblock %}

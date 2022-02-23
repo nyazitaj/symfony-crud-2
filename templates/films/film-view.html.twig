@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FilmsController!{% endblock %}
+
+{% block body %}
+<style>
+</style>
+
+<div class="film">
+    <div class="film-container">
+        <div class="row-film-image">
+            <img src="{{ film.image }}" alt="{{ film.title }}" />
+        </div>
+
+        <div class="row-film-info">
+            <div class="film-title">
+                {{ film.title }}
+            </div>
+            <div class="film-realisateur">
+                {{ film.realisateur }}
+            </div>
+            <div class="film-genre">
+                {{ film.genre }}
+            </div>
+            <div class="film-link">
+                <a href="{{ film.link }}" title="{{ film.title }}" >Télécharger</a>
+            </div>
+
+            <div class="film-icons">
+                <a href="{{ path('film_update', { 'id': film.id }) }}" title="Editer" >
+                    <span class="film-edit"><i class="fa-solid fa-pencil"></i></span>
+                </a>
+                <a href="{{ path('film_delete', { 'id': film.id }) }}" title="Supprimer" >
+                    <span class="film-delete"><i class="fa-solid fa-trash-can"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
