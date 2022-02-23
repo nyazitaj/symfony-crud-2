@@ -9,7 +9,20 @@
 </style>
 
 <div>
-<input 
+    <label for="film-titre">Titre du film</label>
+    <input type="text" id="film-titre" Placeholder="Saisir le titre du film" />
+    <h1>Saved new films with title  <u>{{ film_title }}</u></h1>
+</div>
+
+<div>
+    <label for="film-realisateur">Nom du réalisateur</label>
+    <input type="text" id="film-realisateur" Placeholder="Saisir le nom du réalisateur" />
+    <h1>Saved new films with title  <u>{{ film_title }}</u></h1>
+</div>
+
+<div>
+    <label for="film-genre">Genre</label>
+    <input type="text" id="film-genre" Placeholder="Le genre" />
     <h1>Saved new films with title  <u>{{ film_title }}</u></h1>
 </div>
 {% endblock %}

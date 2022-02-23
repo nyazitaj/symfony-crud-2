@@ -8,11 +8,27 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
+<div class="films">
     {% for film in films %}
-        <h4>
-            film
-        </h4>
+        <div class="film-container">
+            <div class="row-film-image">
+                <span>
+                    <img src="data:image/jpeg;base64,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" alt="Batman" />
+                </span>
+            </div>
+
+            <div class="row-film-info">
+                <span>
+                    {{ film.title }}
+                </span>
+                <span>
+                    {{ film.realisateur }}
+                </span>
+                <span>
+                    {{ film.genre }}
+                </span>
+            </div>
+        </div>
     {% endfor %}
 </div>
 {% endblock %}
