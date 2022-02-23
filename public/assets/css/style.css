@@ -1,4 +1,53 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
 /* --------------------------------------- Navbar --------------------------------------- */
+
+nav.nav {
+    background: #014160;
+    display: block;
+    text-align: center;
+}
+
+nav.nav div {
+    display: inline-flex;
+}
+
+nav.nav a {
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid #727272;
+    padding: 15px 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #565555;
+    position: relative;
+}
+
+nav.nav a:nth-child(1) {
+    border-left: 1px solid #727272;
+}
+
+nav.nav a:after {
+    content: '';
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: silver;
+    transition: .2s all;
+}
+
+nav.nav a:hover:after {
+    content: '';
+    width: 30%;
+}
 
 
 /* -------------------------------------- Film list ------------------------------------- */
@@ -11,7 +60,7 @@
     justify-content: flex-start;
 }
 
-.film-container {
+.films .film-container {
     display: inline-block;
     border: 1px solid #ebebeb;
     padding: 10px;
@@ -23,28 +72,105 @@
     cursor: pointer;
 }
 
-.film-icons {
+.film .film-description,
+.film .film-realisateur,
+.film .film-genre,
+.film .film-date {
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+.films .film-icons {
     position: absolute;
     top: 10px;
     right: 9px;
 }
 
-.film-icons a {
+.film-buttons {
+    padding: 40px 0 0;
+}
+
+.films .film-icons a {
     display: block;
     padding: 4px;
     border: 1px solid silver;
     margin: 5px 5px 8px 0;
 }
 
-.film-container:hover {
+.films .film-container:hover {
     border: 1px solid silver;
     box-shadow: 0 0 5px 0px silver;
 }
 
-.row-film-image {
+.films .row-film-image {
     text-align: center;
 }
 
-.row-film-image img {
+.films .row-film-image img {
     width: 100%;
+}
+
+
+/* ------------------------------------ Film views page --------------------------------- */
+
+.film {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.film .film-container {
+    display: flex;
+    width: 100%;
+    padding-bottom: 45px;
+    position: relative;
+}
+
+.film .row-film-image {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+.film-container img {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.film .row-film-info {
+    width: 100%;
+    padding: 10px;
+}
+
+.film-buttons a {
+    padding: 5px 15px;
+    transition: .2s all;
+    margin-right: 15px;
+}
+
+.film-buttons a:nth-child(1) {}
+
+.film-buttons a:nth-child(2) {
+    border: 1px solid #9e0303;
+    text-decoration: none;
+    color: #9e0303;
+}
+
+.film-buttons a:nth-child(2):hover {
+    border: 1px solid #640202;
+    color: #640202;
+}
+
+.film-buttons a:nth-child(3) {
+    border: 1px solid #115e02;
+    background-color: #115e02;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.film-buttons a:nth-child(3):hover {
+    border: 1px solid #0a3502;
+    background-color: #0a3502;
 }
