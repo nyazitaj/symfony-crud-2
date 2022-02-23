@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Films{% endblock %}
+{% block body %}
+    <div>Body de l'films</div>
+
+    {% if films|length == 0 %}
+        pad de films
+    {% endif %}
+
+    <ul>
+        {% for film in films %}
+            <li>{{ film }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
