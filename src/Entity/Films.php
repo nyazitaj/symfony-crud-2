@@ -63,8 +63,16 @@ class Films
 
     /**
      * @ORM\Column(type="string", length=2000)
+     * @Assert\NotBlank(
+     *    message = "Ce champ est requis.",
+     * )
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $seance;
 
     public function getId(): ?int
     {
@@ -139,6 +147,18 @@ class Films
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getSeance(): ?string
+    {
+        return $this->seance;
+    }
+
+    public function setSeance(string $seance): self
+    {
+        $this->seance = $seance;
 
         return $this;
     }

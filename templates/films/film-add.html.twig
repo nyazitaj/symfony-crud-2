@@ -27,45 +27,53 @@
 
     {# {{ form(form) }} #}
 
-    {% if (idEditor) %}
-        <div>Formualire de modification de film</div>
-    {% else %}
-        <div>Formualire d'ajout de film</div>
-    {% endif %}
 
-    {{ form_start(form) }}
+<div class="film-add">
+    <div class="film-add-container">
 
-    <div>
-        {{ form_row(form.title, { 'label': 'Title :', 'required': false }) }}
-    </div>
-
-    <div>
-        {{ form_row(form.realisateur, { 'label': 'Réalisateur :', 'required': false }) }}
-    </div>
-
-    <div>
-        {{ form_row(form.genre, { 'label': 'Genre :', 'required': false }) }}
-    </div>
-
-    <div>
-        {{ form_row(form.image, { 'label': 'Image :', 'required': false }) }}
-    </div>
-
-    <div>
-        {{ form_row(form.link, { 'label': 'Link :', 'required': false, }) }}
-    </div>
-
-    <div>
-        {{ form_row(form.description, { 'label': 'Description :', 'required': false, }) }}
-    </div>
-
-    <div>
         {% if (idEditor) %}
-            {{ form_row(form.save, { 'label': 'Edit :' }) }}
+            <div class="film-add-title"><h3>Formualire de modification de film</h3></div>
         {% else %}
-            {{ form_row(form.save, { 'label': 'Save :' }) }}
+            <div class="film-add-title"><h3>Formualire d'ajout de film</h3></div>
         {% endif %}
+
+        {{ form_start(form) }}
+
+        <div>
+            {{ form_row(form.title, { 'label': 'Title :', 'required': false }) }}
+        </div>
+
+        <div>
+            {{ form_row(form.realisateur, { 'label': 'Réalisateur :', 'required': false }) }}
+        </div>
+
+        <div>
+            {{ form_row(form.genre, { 'label': 'Genre :', 'required': false }) }}
+        </div>
+
+        <div>
+            {{ form_row(form.image, { 'label': 'Image :', 'required': false }) }}
+        </div>
+
+        <div>
+            {{ form_row(form.link, { 'label': 'Link :', 'required': false, }) }}
+        </div>
+
+        <div>
+            {{ form_row(form.description, { 'label': 'Description :', 'required': false, }) }}
+        </div>
+
+        <div>
+            {% if (idEditor) %}
+                {{ form_row(form.save, { 'label': 'Edit :' }) }}
+            {% else %}
+                {{ form_row(form.save, { 'label': 'Save :' }) }}
+            {% endif %}
+        </div>
+
+
     </div>
+</div>
 
     {{ form_end(form) }}
 {% endblock %}

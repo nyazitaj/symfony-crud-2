@@ -174,3 +174,23 @@ nav.nav a:hover:after {
     border: 1px solid #0a3502;
     background-color: #0a3502;
 }
+
+
+/* -------------------------------------- Film list ------------------------------------- */
+
+.film-add {
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.film-add .film-add-container {
+    border: 1px solid silver;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.film-add .film-add-title {
+    padding: 10px 0 30px;
+}
