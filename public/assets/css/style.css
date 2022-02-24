@@ -19,16 +19,11 @@ nav.nav div {
 nav.nav a {
     color: white;
     text-decoration: none;
-    border-right: 1px solid #727272;
     padding: 15px 10px;
     display: inline-block;
     text-transform: uppercase;
-    background-color: #565555;
     position: relative;
-}
-
-nav.nav a:nth-child(1) {
-    border-left: 1px solid #727272;
+    margin: 0 10px;
 }
 
 nav.nav a:after {
@@ -72,6 +67,11 @@ nav.nav a:hover:after {
     cursor: pointer;
 }
 
+.films .film-container a {
+    text-decoration: none;
+    color: black;
+}
+
 .film .film-description,
 .film .film-realisateur,
 .film .film-genre,
@@ -83,7 +83,14 @@ nav.nav a:hover:after {
 .films .film-icons {
     position: absolute;
     top: 10px;
-    right: 9px;
+    transition: .3s all;
+    right: -6px;
+    opacity: 0;
+}
+
+.films .film-container:hover .film-icons {
+    right: 10px;
+    opacity: 1;
 }
 
 .film-buttons {
@@ -95,6 +102,13 @@ nav.nav a:hover:after {
     padding: 4px;
     border: 1px solid silver;
     margin: 5px 5px 8px 0;
+    background: rgb(255 255 255 / 85%);
+    transition: .2s all;
+}
+
+.films .film-icons a:hover {
+    background: rgb(0 0 0 / 85%);
+    color: white;
 }
 
 .films .film-container:hover {
@@ -108,6 +122,16 @@ nav.nav a:hover:after {
 
 .films .row-film-image img {
     width: 100%;
+}
+
+.films .film-title {
+    font-size: 1em;
+    padding: 5px 0 5px;
+}
+
+.films .film-genre {
+    font-size: 0.7em;
+    padding: 3px 0 0px;
 }
 
 
@@ -176,7 +200,7 @@ nav.nav a:hover:after {
 }
 
 
-/* -------------------------------------- Film list ------------------------------------- */
+/* -------------------------------------- Film form -------------------------------------- */
 
 .film-add {
     max-width: 1200px;
@@ -189,8 +213,98 @@ nav.nav a:hover:after {
     max-width: 550px;
     margin: 0 auto;
     padding: 40px 30px;
+    position: relative;
 }
 
 .film-add .film-add-title {
-    padding: 10px 0 30px;
+    padding: 10px 25px 0;
+    text-align: center;
+}
+
+.film-add .film-add-container form {
+    padding: 0 25px;
+}
+
+.film-add .film-add-container form div {
+    position: relative;
+}
+
+.film-add .film-add-container form label {
+    display: block;
+    padding: 20px 0 5px;
+    font-size: 0.9em;
+}
+
+.film-add .film-add-container form input {
+    display: block;
+    width: 100%;
+    line-height: 1.8em;
+}
+
+.film-add .film-add-container form textarea {
+    display: block;
+    width: 100%;
+    min-height: 130px
+}
+
+div#seance_dateDebut_date,
+div#seance_dateDebut_time,
+div#seance_createdAt_date,
+div#seance_createdAt_time,
+div#seance_updatedAt_date,
+div#seance_updatedAt_time {
+    display: flex;
+    padding: 5px 0;
+}
+
+.film-add .film-add-container select {
+    display: block;
+    width: 100%;
+    line-height: 1.8em;
+    padding: 6px 0;
+}
+
+.film-add .film-add-container form ul {
+    padding: 0;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+}
+
+.film-add .film-add-container form li {
+    font-size: 0.7em;
+    list-style: none;
+    color: red;
+}
+
+.film-add .film-add-container form button {
+    border: 1px solid #115e02;
+    background-color: #115e02;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 7px 40px;
+    transition: .2s all;
+    margin: 45px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.seance-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.seance-btn button {
+    background: white !important;
+    border: 1px solid red !important;
+    padding: 7px 10px !important;
+    color: red !important;
+    transition: .2s all;
+}
+
+.seance-btn button:hover {
+    border: 1px solid red !important;
+    background-color: red!important;
+    color: white!important;
 }

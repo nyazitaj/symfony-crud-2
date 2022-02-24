@@ -19,12 +19,12 @@ class DefaultController extends AbstractController {
 
     /* function test( $req ) {
         // $prenom = $_GET['prenom'];
-    
+
         // $req = Request::createFromGlobal();
         $prenom = $req -> query -> get('prenom', 0);
-    
+
         echo '<pre>';
-    
+
         var_dump(
             'Salut ' . $prenom
         );
@@ -34,8 +34,8 @@ class DefaultController extends AbstractController {
         die();
     } */
 
-    /* function profile( $prenom ) {    
-    
+    /* function profile( $prenom ) {
+
         dd(
             'Salut ' . $prenom
         );
@@ -91,7 +91,7 @@ class DefaultController extends AbstractController {
     public function cinema($numero, $seance)
     {
         $film = 'Le roi Lion';
-    
+
         return $this -> render(
             'default/index.html.twig', ['numero' => $numero, 'seance' => $seance, 'film' => $film]
         );

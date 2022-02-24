@@ -3,14 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\Films;
+use DateTimeImmutable;
+use Doctrine\DBAL\Types\DateType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class FilmsController extends AbstractController
 {
@@ -70,7 +74,7 @@ class FilmsController extends AbstractController
 
         if($id) {
             $film = $entityManager -> getRepository(Films::class) -> find($id);
-        
+
             if(!$film) {
                 return $this->redirectToRoute('film_read');
             }
@@ -104,6 +108,8 @@ class FilmsController extends AbstractController
             ->add('image', TextType::class)
             ->add('link', TextType::class)
             ->add('description', TextareaType::class)
+            ->add('duree', NumberType::class)
+            ->add('status', TextType::class)
             ->add('save', SubmitType::class, ['label' => 'Ajouter'])
             ->getForm();
 
@@ -112,6 +118,14 @@ class FilmsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
+
+
+            if(!$film -> getId()) {
+                $film -> setCreatedAt( new DateTimeImmutable() );
+            }
+            $film -> setUpdatedAt( new DateTimeImmutable() );
+
+
             $form = $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
