@@ -36,23 +36,27 @@
     {{ form_start(form) }}
 
     <div>
-        {{ form_row(form.title, { 'label': 'Title :' }) }}
+        {{ form_row(form.title, { 'label': 'Title :', 'required': false }) }}
     </div>
 
     <div>
-        {{ form_row(form.realisateur, { 'label': 'Réalisateur :' }) }}
+        {{ form_row(form.realisateur, { 'label': 'Réalisateur :', 'required': false }) }}
     </div>
 
     <div>
-        {{ form_row(form.genre, { 'label': 'Genre :' }) }}
+        {{ form_row(form.genre, { 'label': 'Genre :', 'required': false }) }}
     </div>
 
     <div>
-        {{ form_row(form.image, { 'label': 'Image :' }) }}
+        {{ form_row(form.image, { 'label': 'Image :', 'required': false }) }}
     </div>
 
     <div>
-        {{ form_row(form.link, { 'label': 'Link :' }) }}
+        {{ form_row(form.link, { 'label': 'Link :', 'required': false, }) }}
+    </div>
+
+    <div>
+        {{ form_row(form.description, { 'label': 'Description :', 'required': false, }) }}
     </div>
 
     <div>
