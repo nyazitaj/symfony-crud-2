@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SeanceType extends AbstractType
 {
@@ -17,17 +18,12 @@ class SeanceType extends AbstractType
     {
         $builder
             ->add('dateDebut', DateTimeType::class, [
-                'widget' => 'single_text'
+                'widget' => 'single_text',
+                'label' => 'Date début'
             ])
-            ->add('lang')
-            ->add('duree')
-            ->add('status')
-            /* ->add('createdAt', DateTimeType::class, [
-                'widget' => 'single_text'
-            ])
-            ->add('updatedAt', DateTimeType::class, [
-                'widget' => 'single_text'
-            ]) */
+            ->add('lang', TextType::class, ['label' => 'Langue'])
+            ->add('duree', TextType::class, ['label' => 'Durée'])
+            ->add('status', TextType::class, ['label' => 'Statut'])
             ->add('film',
             EntityType::class,
             [
@@ -38,7 +34,8 @@ class SeanceType extends AbstractType
             EntityType::class,
             [
                 'class' => Salle::class,
-                'choice_label' => 'num_salle'
+                'choice_label' => 'num_salle',
+                'label' => 'Salle'
             ])
         ;
     }

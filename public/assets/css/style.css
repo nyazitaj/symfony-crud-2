@@ -92,7 +92,9 @@ nav.nav a:hover:after {
 .film .film-description,
 .film .film-realisateur,
 .film .film-genre,
-.film .film-date {
+.film .film-date,
+.film .film-seance,
+.film .film-salle {
     font-size: 0.9em;
     line-height: 1.4em;
 }
@@ -151,6 +153,15 @@ nav.nav a:hover:after {
     padding: 3px 0 0px;
 }
 
+.film .seance-salle .film-seance,
+.film .seance-salle .film-salle {
+    border-top: 1px solid silver;
+    box-shadow: inset 0 0 9px -5px rgb(66 66 66);
+    border-bottom: 1px solid silver;
+    margin-bottom: 11px;
+    padding-left: 10px;
+}
+
 
 /* ------------------------------------ Film views page --------------------------------- */
 
@@ -166,7 +177,7 @@ nav.nav a:hover:after {
 .film .film-container {
     display: flex;
     width: 100%;
-    padding-bottom: 45px;
+    padding: 10px 10px 45px;
     position: relative;
 }
 
@@ -339,6 +350,7 @@ div#seance_updatedAt_time {
     margin: 0;
     text-align: center;
     padding: 15px;
+    background-color: #fff9df;
 }
 
 .seance-and-salle-list table {

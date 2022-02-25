@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Films;
+use App\Entity\Seance;
+use App\Entity\Salle;
 use DateTimeImmutable;
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\Persistence\ManagerRegistry;
@@ -51,12 +53,16 @@ class FilmsController extends AbstractController
      */
     public function film_view( ManagerRegistry $doctrine, $id): Response
     {
+        $seance = new Seance;
+        $salle = new salle;
 
         $entityManager = $doctrine -> getManager();
         $film = $entityManager -> getRepository(Films::class) -> find($id);
 
         return $this->render('films/film-view.html.twig', [
             'film' => $film,
+            'seance' => $seance,
+            'salle' => $salle,
         ]);
 
     }
@@ -83,6 +89,11 @@ class FilmsController extends AbstractController
         else {
             $film = new Films;
         }
+
+
+        /* $film = [
+            'title'
+        ]; */
 
         // $film = new Films;
 
