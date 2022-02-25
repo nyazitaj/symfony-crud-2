@@ -33,11 +33,11 @@
                     Genre : {{ film.genre }}
                 </p>
             </div>
-            <div class="film-date">
+            {# <div class="film-date">
                 <p>
                     Date de sortie : {{ film.createdAt }}
                 </p>
-            </div>
+            </div> #}
             <div class="film-date">
                 <p>
                     Durée : {{ film.duree }} minutes
@@ -50,13 +50,13 @@
             </div>
 
             <div class="seance-salle">
-                {% if (seance.dateDebut) %}
+                {# {% if (seance.dateDebut) %} #}
                     <div class="film-seance">
                         <p>
                             Séance : {{ seance.dateDebut }}
                         </p>
                     </div>
-                {% endif %}
+                {# {% endif %} #}
 
                 {# <div class="film-salle">
                     <p>
