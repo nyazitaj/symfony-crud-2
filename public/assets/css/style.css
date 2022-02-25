@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background: url(/assets/images/image-du-fond-3.jpg);
 }
 
 
@@ -10,6 +11,20 @@ nav.nav {
     background: #014160;
     display: block;
     text-align: center;
+    position: relative;
+}
+
+.site-logo {
+    position: absolute;
+    left: 25px;
+    top: 3px;
+}
+
+.site-logo img {
+    width: 32px;
+    border: 1px solid #686868;
+    border-radius: 5px;
+    padding: 6px;
 }
 
 nav.nav div {
@@ -24,6 +39,7 @@ nav.nav a {
     text-transform: uppercase;
     position: relative;
     margin: 0 10px;
+    font-size: 0.8em;
 }
 
 nav.nav a:after {
@@ -65,6 +81,7 @@ nav.nav a:hover:after {
     margin: 0 10px 30px;
     position: relative;
     cursor: pointer;
+    background-color: white;
 }
 
 .films .film-container a {
@@ -112,8 +129,8 @@ nav.nav a:hover:after {
 }
 
 .films .film-container:hover {
-    border: 1px solid silver;
-    box-shadow: 0 0 5px 0px silver;
+    border: 1px solid white;
+    box-shadow: 0 0 10px 0px rgb(255 255 255 / 70%);
 }
 
 .films .row-film-image {
@@ -143,6 +160,7 @@ nav.nav a:hover:after {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    background-color: white;
 }
 
 .film .film-container {
@@ -188,8 +206,8 @@ nav.nav a:hover:after {
 }
 
 .film-buttons a:nth-child(3) {
-    border: 1px solid #115e02;
-    background-color: #115e02;
+    border: 1px solid #5c068d;
+    background-color: #5c068d;
     text-decoration: none;
     color: #ffffff;
 }
@@ -214,6 +232,7 @@ nav.nav a:hover:after {
     margin: 0 auto;
     padding: 40px 30px;
     position: relative;
+    background-color: white;
 }
 
 .film-add .film-add-title {
@@ -278,8 +297,8 @@ div#seance_updatedAt_time {
 }
 
 .film-add .film-add-container form button {
-    border: 1px solid #115e02;
-    background-color: #115e02;
+    border: 1px solid #5c068d;
+    background-color: #5c068d;
     text-decoration: none;
     color: #ffffff;
     padding: 7px 40px;
@@ -307,4 +326,91 @@ div#seance_updatedAt_time {
     border: 1px solid red !important;
     background-color: red!important;
     color: white!important;
+}
+
+
+/* ---------------------------------- Seances et salles ----------------------------------- */
+
+.seance-and-salle-list {
+    background: white;
+}
+
+.seance-and-salle-list h2 {
+    margin: 0;
+    text-align: center;
+    padding: 15px;
+}
+
+.seance-and-salle-list table {
+    width: 100%;
+}
+
+.seance-and-salle-list table thead {
+    background-color: #14222e;
+    color: white;
+    line-height: 3em;
+}
+
+.seance-and-salle-list table thead th {
+    padding: 0 15px;
+}
+
+.seance-and-salle-list table tbody td {
+    border-bottom: 1px solid #fbf9e4;
+    padding: 15px 8px;
+    transition: .2s all;
+}
+
+.seance-and-salle-list table tbody td.id {
+    width: 50px;
+}
+
+.seance-and-salle-list table td.actions {
+    text-align: center;
+}
+
+.seance-and-salle-list table tbody tr:hover td {
+    background-color: #f3f2e4;
+}
+
+.seance-and-salle-list .btn-new a {
+    border: 1px px solid #5c068d;
+    background-color: #5c068d;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 7px 40px;
+    transition: .2s all;
+    margin: 40px 0 25px 10px;
+    display: inline-block;
+}
+
+
+/* -------------------------------- Seances et salles show --------------------------------- */
+
+.image-fond-seance {
+    background-image: url(/assets/images/seance.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+.image-fond-seance .film {
+    margin: 0 auto;
+}
+
+.image-fond-seance .film .film-container {
+    display: block;
+}
+
+.image-fond-seance .film .film-container h2 {
+    text-align: center;
+}
+
+.seance-and-salle-list table th {
+    width: 124px;
+    text-align: left;
+    background-color: #14222e;
+    color: white;
+    padding-left: 10px;
 }

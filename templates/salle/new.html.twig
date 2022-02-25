@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle séance{% endblock %}
+{% block title %}Nouvelle salle{% endblock %}
 
 {% block body %}
 
@@ -8,13 +8,12 @@
         <div class="film-add-container">
 
             <div class="film-add-title">
-                <h2>Nouvelle séance</h2>
+                <h2>Nouvelle salle</h2>
             </div>
 
-            {{ include('seance/_form.html.twig') }}
+            {{ include('salle/_form.html.twig') }}
 
-            <a href="{{ path('seance_index') }}">Revenir à la liste</a>
-
+            <a href="{{ path('salle_index') }}">Revenir à la liste</a>
         </div>
     </div>
 

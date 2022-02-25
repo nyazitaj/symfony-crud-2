@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salles disponibles{% endblock %}
+
+{% block body %}
+    <div class="seance-and-salle-list">
+        <div class="seance-and-salle-list-container">
+
+            <h2>Salles disponibles</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Numéro de salle</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for salle in salles %}
+                    <tr>
+                        <td class="id">{{ salle.id }}</td>
+                        <td>{{ salle.numSalle }}</td>
+                        <td class="actions">
+                            <a href="{{ path('salle_show', {'id': salle.id}) }}">show</a>
+                            <a href="{{ path('salle_edit', {'id': salle.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Pas de salle</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="btn-new">
+                <a href="{{ path('salle_new') }}">Create new</a>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

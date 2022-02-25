@@ -1,45 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Seance index{% endblock %}
+{% block title %}Séances disponibles{% endblock %}
 
 {% block body %}
-    <h1>Seance index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>DateDebut</th>
-                <th>Lang</th>
-                <th>Duree</th>
-                <th>Status</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for seance in seances %}
-            <tr>
-                <td>{{ seance.id }}</td>
-                <td>{{ seance.dateDebut ? seance.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ seance.lang }}</td>
-                <td>{{ seance.duree }}</td>
-                <td>{{ seance.status }}</td>
-                <td>{{ seance.createdAt ? seance.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ seance.updatedAt ? seance.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('seance_show', {'id': seance.id}) }}">show</a>
-                    <a href="{{ path('seance_edit', {'id': seance.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="seance-and-salle-list">
+        <div class="seance-and-salle-list-container">
 
-    <a href="{{ path('seance_new') }}">Create new</a>
+            <h2>Séances disponibles</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date début</th>
+                        <th>Langue</th>
+                        <th>Durée</th>
+                        <th>Statut</th>
+                        <th>Créée le</th>
+                        <th>Modifiée le</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for seance in seances %}
+                    <tr>
+                        <td class="id">{{ seance.id }}</td>
+                        <td>{{ seance.dateDebut ? seance.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ seance.lang }}</td>
+                        <td>{{ seance.duree }}</td>
+                        <td>{{ seance.status }}</td>
+                        <td>{{ seance.createdAt ? seance.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ seance.updatedAt ? seance.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td class="actions">
+                            <a href="{{ path('seance_show', {'id': seance.id}) }}">Voir</a>
+                            <a href="{{ path('seance_edit', {'id': seance.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">Pas de séance</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="btn-new">
+                <a href="{{ path('seance_new') }}">Ajouter une séance</a>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}

@@ -39,14 +39,14 @@
 
         {{ form_start(form) }}
 
-        {{ form_row(form.title, { 'label': 'Title :', 'required': false }) }}
-        {{ form_row(form.realisateur, { 'label': 'Réalisateur :', 'required': false }) }}
-        {{ form_row(form.genre, { 'label': 'Genre :', 'required': false }) }}
-        {{ form_row(form.image, { 'label': 'Le lien d\'une image :', 'required': false }) }}
-        {{ form_row(form.link, { 'label': 'Link :', 'required': false, 'type': 'url' }) }}
-        {{ form_row(form.description, { 'label': 'Description :', 'required': false, 'rows': '10' }) }}
-        {{ form_row(form.duree, { 'label': 'Durée (en minutes) :', 'required': false, 'type': 'number' }) }}
-        {{ form_row(form.status, { 'label': 'Status :', 'required': false, }) }}
+        {{ form_row(form.title, { 'label': 'Titre du film :', }) }}
+        {{ form_row(form.realisateur, { 'label': 'Réalisateur :', }) }}
+        {{ form_row(form.genre, { 'label': 'Genre :', }) }}
+        {{ form_row(form.image, { 'label': 'Le lien d\'affiche :', }) }}
+        {{ form_row(form.link, { 'label': 'Le lien du film :', 'type': 'url' }) }}
+        {{ form_row(form.description, { 'label': 'Résumé :', 'rows': '10' }) }}
+        {{ form_row(form.duree, { 'label': 'Durée (en minutes) :', 'type': 'number' }) }}
+        {{ form_row(form.status, { 'label': 'Statut :', }) }}
 
         {% if (idEditor) %}
             {{ form_row(form.save, { 'label': 'Enregistrer' }) }}

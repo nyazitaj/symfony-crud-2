@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Seance;
 use App\Form\SeanceType;
 use App\Repository\SeanceRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,6 +33,13 @@ class SeanceController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $seance = new Seance();
+
+        if(!$seance -> getId()) {
+            $seance -> setCreatedAt( new DateTimeImmutable() );
+        }
+        $seance -> setUpdatedAt( new DateTimeImmutable() );
+
+
         $form = $this->createForm(SeanceType::class, $seance);
         $form->handleRequest($request);
 
