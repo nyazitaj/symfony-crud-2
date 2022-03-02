@@ -7,8 +7,13 @@
 </style>
 
 <div class="films">
+    {# <div class="btn-restore">
+        <a href="{{ path('film_default') }}" title="Réinitialser" >Réinitialser</a>
+    </div> #}
+
     {% for film in films %}
         <div class="film-container">
+
             <div class="film-icons">
                 <a href="{{ path('film_update', { 'id': film.id }) }}" title="Editer" >
                     <span class="film-edit"><i class="fa-solid fa-pencil"></i></span>

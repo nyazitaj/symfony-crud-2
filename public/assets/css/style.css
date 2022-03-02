@@ -69,6 +69,22 @@ nav.nav a:hover:after {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    position: relative;
+}
+
+.btn-restore {
+    position: absolute;
+    top: -42px;
+    right: 0;
+}
+.btn-restore a {
+    color: white;
+    padding: 5px;
+    border: 1px solid rgb(192 192 192 / 0%);
+    transition: .2s all;
+}
+.btn-restore a:hover {
+    border: 1px solid silver;
 }
 
 .films .film-container {
@@ -425,4 +441,34 @@ div#seance_updatedAt_time {
     background-color: #14222e;
     color: white;
     padding-left: 10px;
+}
+
+.btn-seance-show,
+.btn-salle-show {
+    padding: 30px 20px 35px;
+}
+.btn-seance-show form,
+.btn-salle-show form {
+    display: inline-block;
+}
+.btn-seance-show a,
+.btn-salle-show a {
+    padding: 5px 15px;
+    transition: .2s all;
+    margin-right: 15px;
+}
+.btn-seance-show button.btn,
+.btn-salle-show button.btn {
+    cursor: pointer;
+    background: white !important;
+    border: 1px solid red !important;
+    padding: 7px 10px !important;
+    color: red !important;
+    transition: .2s all;
+}
+.btn-seance-show button.btn:hover,
+.btn-salle-show button.btn:hover {
+    border: 1px solid red !important;
+    background-color: red!important;
+    color: white!important;
 }
